@@ -1,19 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  // Hapus 'output: export' jika ingin server-side rendering
+  output: 'export',
+  trailingSlash: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3845',
-      },
-    ],
+    unoptimized: true
   },
   typescript: {
     ignoreBuildErrors: true,
