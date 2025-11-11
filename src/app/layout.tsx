@@ -1,0 +1,59 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Poppins } from "next/font/google"
+import localFont from "next/font/local"
+import { Analytics } from "@vercel/analytics/next"
+import CustomCursor from "@/components/custom-cursor"
+import "./globals.css"
+
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins"
+})
+
+const kisthe = localFont({
+  src: "../../public/fonts/Kisthe.otf",
+  variable: "--font-kisthe",
+  display: "swap",
+})
+
+export const metadata: Metadata = {
+  title: "FSAE Grand Launching - Elite Racing Innovation",
+  description:
+    "Experience the future of Formula SAE racing. Grand launching of our revolutionary race car. Coming soon.",
+  generator: "v0.app",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins.variable} ${kisthe.variable} font-sans antialiased overflow-x-hidden cursor-none`}>
+        <CustomCursor />
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
+}

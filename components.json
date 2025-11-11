@@ -1,0 +1,49 @@
+{
+  "components": [
+    {
+      "name": "Button",
+      "path": "src/components/ui/button.tsx",
+      "description": "A customizable button component styled with Tailwind CSS and animated with Framer Motion."
+    },
+    {
+      "name": "Card",
+      "path": "src/components/ui/card.tsx",
+      "description": "A visually appealing card component for displaying content, styled with Tailwind CSS and using Framer Motion for animations."
+    },
+    {
+      "name": "Input",
+      "path": "src/components/ui/input.tsx",
+      "description": "A styled input component for user input, utilizing Tailwind CSS for styling."
+    },
+    {
+      "name": "Header",
+      "path": "src/components/layout/header.tsx",
+      "description": "The header component that includes navigation links and branding, designed for responsiveness."
+    },
+    {
+      "name": "Footer",
+      "path": "src/components/layout/footer.tsx",
+      "description": "A visually appealing footer component providing additional information and links, responsive in design."
+    },
+    {
+      "name": "Navigation",
+      "path": "src/components/layout/navigation.tsx",
+      "description": "The navigation component that handles site navigation logic and links."
+    },
+    {
+      "name": "FadeIn",
+      "path": "src/components/animations/fade-in.tsx",
+      "description": "A fade-in animation component using Framer Motion for smooth entrance animations."
+    },
+    {
+      "name": "Utils",
+      "path": "src/lib/utils.ts",
+      "description": "Utility functions for formatting and data manipulation used throughout the application."
+    },
+    {
+      "name": "useMediaQuery",
+      "path": "src/hooks/use-media-query.ts",
+      "description": "A custom hook for responsive design that checks media query matches."
+    }
+  ]
+}
