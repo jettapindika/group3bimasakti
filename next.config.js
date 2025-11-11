@@ -12,13 +12,13 @@ const nextConfig = {
         hostname: 'localhost',
         port: '3845',
       },
-      typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
     ],
+  },
+  typescript: {
+      ignoreBuildErrors: true,
+     },
+      eslint: {
+     ignoreDuringBuilds: true,
   },
 }
 
