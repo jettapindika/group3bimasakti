@@ -1,19 +1,11 @@
 "use client"
-import dynamic from "next/dynamic"
-import Image from "next/image"
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import MagneticButton from "@/components/magnetic-button"
 import Navbar from "@/components/navbar"
 import AudioPlayer from "@/components/audio-player"
+import EngineeringExcellence from "@/components/engineering-excellence"
+import SpecsSection from "@/components/specs-section"
 import { useRef, useState } from "react"
-
-// Dynamic imports for performance
-const EngineeringExcellence = dynamic(() => import("@/components/engineering-excellence"), { ssr: false })
-const CarShowcase = dynamic(() => import("@/components/car-showcase"), { ssr: false })
-const SpecsSection = dynamic(() => import("@/components/specs-section"), { ssr: false })
-const ParticleField = dynamic(() => import("@/components/particle-field"), { ssr: false })
-const DataStream = dynamic(() => import("@/components/data-stream"), { ssr: false })
-const ScrollProgress = dynamic(() => import("@/components/scroll-progress"), { ssr: false })
 
 export default function Home() {
   const heroRef = useRef(null)
@@ -33,12 +25,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-foreground overflow-hidden relative scroll-smooth">
-      {/* Advanced Background Effects */}
-      <ParticleField />
-      <DataStream />
-      <ScrollProgress />
       <AudioPlayer />
-      
       <Navbar />
 
       {/* F1-Style Hero Section */}

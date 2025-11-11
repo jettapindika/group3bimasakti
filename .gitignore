@@ -12,6 +12,7 @@ node_modules/
 
 # Production
 /build
+/dist
 
 # Misc
 .DS_Store
@@ -36,3 +37,14 @@ next-env.d.ts
 # IDE
 .vscode/
 .idea/
+
+# Documentation (unused)
+CHECKLIST.md
+DEPLOYMENT.md
+IMPLEMENTATION_COMPLETE.md
+QUICKSTART.md
+SETUP_COMPLETE.md
+
+# Duplicate folders
+code/
+src/public/

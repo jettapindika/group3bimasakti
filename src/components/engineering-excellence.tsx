@@ -54,6 +54,8 @@ function HoverReveal({ imageUrl }: { imageUrl: string }) {
     });
   };
 
+  const revealRadius = 180; // Size of the reveal circle
+
   return (
     <div
       ref={containerRef}
@@ -72,13 +74,13 @@ function HoverReveal({ imageUrl }: { imageUrl: string }) {
         />
       </div>
 
-      {/* Reveal Layer - Circular spotlight following cursor */}
+      {/* Reveal Layer - Perfect circular spotlight with smooth edges */}
       {isHovering && (
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none transition-opacity duration-200"
           style={{
-            maskImage: `radial-gradient(circle 150px at ${mousePosition.x}px ${mousePosition.y}px, black 100%, transparent 100%)`,
-            WebkitMaskImage: `radial-gradient(circle 150px at ${mousePosition.x}px ${mousePosition.y}px, black 100%, transparent 100%)`,
+            maskImage: `radial-gradient(circle ${revealRadius}px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, black 70%, transparent 100%)`,
+            WebkitMaskImage: `radial-gradient(circle ${revealRadius}px at ${mousePosition.x}px ${mousePosition.y}px, black 0%, black 70%, transparent 100%)`,
           }}
         >
           <img
@@ -89,18 +91,19 @@ function HoverReveal({ imageUrl }: { imageUrl: string }) {
         </div>
       )}
 
-      {/* Orange Glow following cursor */}
+      {/* Orange Glow - smooth circular gradient following cursor */}
       {isHovering && (
         <div
-          className="absolute pointer-events-none z-10"
+          className="absolute pointer-events-none z-10 transition-all duration-100 ease-out"
           style={{
             left: `${mousePosition.x}px`,
             top: `${mousePosition.y}px`,
             transform: 'translate(-50%, -50%)',
-            width: '300px',
-            height: '300px',
-            background: 'radial-gradient(circle, rgba(255, 140, 66, 0.6) 0%, rgba(255, 140, 66, 0.3) 30%, transparent 60%)',
-            filter: 'blur(40px)',
+            width: `${revealRadius * 2.5}px`,
+            height: `${revealRadius * 2.5}px`,
+            background: 'radial-gradient(circle, rgba(255, 140, 66, 0.5) 0%, rgba(255, 140, 66, 0.25) 25%, rgba(255, 140, 66, 0.1) 50%, transparent 70%)',
+            filter: 'blur(50px)',
+            borderRadius: '50%',
           }}
         />
       )}
