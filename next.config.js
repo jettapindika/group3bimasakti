@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Hapus 'output: export' jika ingin server-side rendering
   images: {
     remotePatterns: [
       {
@@ -15,10 +16,10 @@ const nextConfig = {
     ],
   },
   typescript: {
-      ignoreBuildErrors: true,
-     },
-      eslint: {
-     ignoreDuringBuilds: true,
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 }
 
