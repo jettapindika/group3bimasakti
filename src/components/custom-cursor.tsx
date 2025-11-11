@@ -3,6 +3,12 @@
 import { useEffect, useState, useRef } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 
+interface Trail {
+  x: number
+  y: number
+  id: number
+}
+
 export default function CustomCursor() {
   const [isPointer, setIsPointer] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
@@ -16,7 +22,7 @@ export default function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig)
 
   // Trail positions for the glow effect
-  const [trails, setTrails] = useState<Array<{ x: number; y: number; id: number }>>([])
+  const [trails, setTrails] = useState<Trail[]>([])
 
   useEffect(() => {
     const updateCursor = (e: MouseEvent) => {
@@ -36,8 +42,8 @@ export default function CustomCursor() {
       const isInteractive = 
         target.tagName === "BUTTON" ||
         target.tagName === "A" ||
-        target.closest("button") ||
-        target.closest("a") ||
+        !!target.closest("button") ||
+        !!target.closest("a") ||
         target.classList.contains("cursor-pointer") ||
         window.getComputedStyle(target).cursor === "pointer"
       
@@ -120,12 +126,13 @@ export default function CustomCursor() {
           animate={{
             width: isPointer ? 60 : 40,
             height: isPointer ? 60 : 40,
-            x: "-50%",
-            y: "-50%",
           }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           style={{
             boxShadow: "0 0 35px rgba(255, 140, 66, 0.6), 0 0 25px rgba(139, 90, 60, 0.4)",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
           }}
         />
         
@@ -135,12 +142,13 @@ export default function CustomCursor() {
           animate={{
             width: isPointer ? 12 : 8,
             height: isPointer ? 12 : 8,
-            x: "-50%",
-            y: "-50%",
           }}
           transition={{ type: "spring", stiffness: 500, damping: 28 }}
           style={{
             boxShadow: "0 0 10px rgba(212, 166, 42, 0.8)",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
           }}
         />
 
@@ -148,10 +156,6 @@ export default function CustomCursor() {
         {isPointer && (
           <motion.div
             className="absolute rounded-full bg-primary/20"
-            style={{
-              x: "-50%",
-              y: "-50%",
-            }}
             initial={{ width: 0, height: 0, opacity: 0 }}
             animate={{ 
               width: [60, 80, 60],
@@ -162,6 +166,11 @@ export default function CustomCursor() {
               duration: 1.5,
               repeat: Infinity,
               ease: "easeInOut"
+            }}
+            style={{
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
             }}
           />
         )}
