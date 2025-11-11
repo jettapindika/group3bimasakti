@@ -1,5 +1,5 @@
 "use client"
-import { motion, useScroll, useTransform, useSpring } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion"
 import MagneticButton from "@/components/magnetic-button"
 import Navbar from "@/components/navbar"
 import AudioPlayer from "@/components/audio-player"
@@ -232,8 +232,8 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* Floating stats with AnimatePresence */}
-            <AnimatePresence mode="wait">
+            {/* Floating stats */}
+            <AnimatePresence>
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -472,11 +472,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Car Showcase Section */}
-      <section id="features" className="relative py-24 md:py-40 px-4 md:px-8">
-        <CarShowcase />
       </section>
 
       {/* Engineering Excellence Section */}

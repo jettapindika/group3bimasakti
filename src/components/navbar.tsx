@@ -46,7 +46,7 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div className="hidden md:flex items-center gap-8">
-          {["Features", "Engineering", "Specs", "Contact"].map((link, i) => (
+          {["Engineering", "Specs", "Contact"].map((link, i) => (
             <motion.a
               key={link}
               href={`#${link.toLowerCase()}`}
