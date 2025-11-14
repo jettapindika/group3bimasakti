@@ -215,7 +215,7 @@ export default function Home() {
               {/* Car Image */}
               <div className="relative w-full h-full">
                 <img
-                  src="/images/CloseupLook.jpg"
+                  src="/images/CloseupLook.webp"
                   alt="FSAE Race Car - Close Up Look"
                   className="w-full h-full object-cover object-center"
                   style={{ display: "block" }}

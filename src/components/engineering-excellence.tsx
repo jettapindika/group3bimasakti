@@ -202,7 +202,7 @@ export default function EngineeringExcellence() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <HoverReveal imageUrl="/images/BimasaktiCar.jpg" />
+          <HoverReveal imageUrl="/images/BimasaktiCar.webp" />
         </motion.div>
         {/* Features Grid */}
         <motion.div

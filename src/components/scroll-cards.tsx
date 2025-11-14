@@ -185,7 +185,7 @@ const card: React.CSSProperties = {
  */
 
 const cards: [string, string, number, number][] = [
-  ["/images/img1.JPG", "Innovation", 20, 35],
-  ["/images/img2.JPG", "Performance", 25, 40],
-  ["/images/img3.JPG", "Excellence", 15, 30],
+  ["/images/img1.webp", "Innovation", 20, 35],
+  ["/images/img2.webp", "Performance", 25, 40],
+  ["/images/img3.webp", "Excellence", 15, 30],
 ];

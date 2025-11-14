@@ -38,7 +38,7 @@ export default function Navbar() {
         >
           <div className="w-10 h-10 rounded-lg flex items-center justify-center pulse-ring hover-lift">
             <img
-              src="/images/Logo M.png"
+              src="/images/Logo.webp"
               alt="BS Logo"
               className="w-full h-full object-contain"
             />
