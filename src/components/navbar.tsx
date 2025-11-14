@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion, useScroll } from "framer-motion"
-import { useState, useEffect } from "react"
-import MagneticButton from "@/components/magnetic-button"
+import { motion, useScroll } from "framer-motion";
+import { useState, useEffect } from "react";
+import MagneticButton from "@/components/magnetic-button";
 
 export default function Navbar() {
-  const [isDetached, setIsDetached] = useState(false)
-  const { scrollY } = useScroll()
+  const [isDetached, setIsDetached] = useState(false);
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      setIsDetached(latest > 100)
-    })
-  }, [scrollY])
+      setIsDetached(latest > 100);
+    });
+  }, [scrollY]);
 
   return (
     <motion.nav
@@ -34,10 +34,14 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-4"
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-primary rounded-lg flex items-center justify-center pulse-ring hover-lift">
-            <span className="text-background font-black text-lg">BS</span>
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center pulse-ring hover-lift">
+            <img
+              src="/images/Logo M.png"
+              alt="BS Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <span className="hidden sm:inline font-black text-lg neon-glow bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             BIMASAKTI
@@ -62,11 +66,17 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-          <MagneticButton 
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <MagneticButton
             className="bg-primary text-black hover:bg-primary/90 font-bold px-6 py-2 rounded-lg"
             onClick={() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             Join Us
@@ -74,5 +84,5 @@ export default function Navbar() {
         </motion.div>
       </div>
     </motion.nav>
-  )
+  );
 }
