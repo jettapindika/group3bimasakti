@@ -45,7 +45,6 @@ export default function NotFound() {
           </Link>
           <Button
             size="lg"
-            variant="outline"
             onClick={() => window.history.back()}
             className="gap-2"
           >
